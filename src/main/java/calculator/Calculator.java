@@ -6,10 +6,16 @@ import java.util.Set;
 public class Calculator {
     static public int add(int opG, int opD)
     {
+        if ((long)opG + (long)opD > Integer.MAX_VALUE) {
+            throw new IllegalArgumentException("Input values must be less than Integer.MAX_VALUE.");
+        }
         return opG + opD;
     }
     static public int divide(int opG, int opD)
     {
+        if (opD == 0) {
+            throw new IllegalArgumentException("Division by zero is not allowed.");
+        }
         return opG/opD;
     }
 
