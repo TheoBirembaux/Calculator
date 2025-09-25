@@ -21,6 +21,7 @@ public class Calculator {
 
     static Set<Integer> ensembleChiffres(int pNombre)
     {
+        //
         Set<Integer> chiffres = new HashSet<>();
         String nombreStr = Integer.toString(Math.abs(pNombre));
         for (char c : nombreStr.toCharArray()) {
