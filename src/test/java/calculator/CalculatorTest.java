@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
@@ -57,5 +59,19 @@ class CalculatorTest {
     void add_devrait_calculer_la_somme_de_plusieurs_entiers(int opG, int opD, int resultatAttendu) {
         int resultat = Calculator.add(opG, opD);
         assertThat(resultat).isEqualTo(resultatAttendu);
+    }
+
+    @Test
+    void ensembleChiffres_devrait_retourner_les_chiffres_dun_nombre_positif() {
+        //GIVEN
+        int nombre = 7679;
+        Set<Integer> expected = Set.of(6,7,9);
+
+        //WHEN
+        Set<Integer> result = calculator.ensembleChiffres(nombre);
+
+        //THEN
+        assertThat(result).isEqualTo(expected);
+
     }
 }
