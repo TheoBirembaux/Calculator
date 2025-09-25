@@ -2,6 +2,8 @@ package calculator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
@@ -42,5 +44,18 @@ class CalculatorTest {
 
         //THEN
         assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "0, 1, 1",
+            "1, 2, 3",
+            "-2, 2, 0",
+            "0, 0, 0",
+            "-1, -2, -3"
+    })
+    void add_devrait_calculer_la_somme_de_plusieurs_entiers(int opG, int opD, int resultatAttendu) {
+        int resultat = Calculator.add(opG, opD);
+        assertThat(resultat).isEqualTo(resultatAttendu);
     }
 }
