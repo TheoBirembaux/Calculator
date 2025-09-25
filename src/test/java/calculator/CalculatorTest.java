@@ -23,7 +23,7 @@ class CalculatorTest {
         int expected = 3;
 
         //WHEN
-        int result = calculator.add(opG, opD);
+        int result = Calculator.add(opG, opD);
 
         //THEN
         assertThat(result).isEqualTo(expected);
@@ -38,7 +38,7 @@ class CalculatorTest {
         int expected = 2;
 
         //WHEN
-        int result = calculator.divide(opG, opD);
+        int result = Calculator.divide(opG, opD);
 
         //THEN
         assertThat(result).isEqualTo(expected);
