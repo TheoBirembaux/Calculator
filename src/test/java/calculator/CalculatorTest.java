@@ -1,15 +1,23 @@
 package calculator;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
 class CalculatorTest {
+
+    private Calculator calculator;
+
+    @BeforeEach
+    void setUp() {
+        Calculator calculator = new Calculator();
+    }
+
     @Test
     void add_devrait_calculer_la_somme_de_deux_entiers() {
         //GIVEN
-        Calculator calculator = new Calculator();
         int opG = 1;
         int opD = 2;
         int expected = 3;
